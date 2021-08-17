@@ -1,28 +1,45 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Testing Message"/>
+    <Header promoBanner="Free Shipping on all orders"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/Header.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Header
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+  @import url('https://fonts.googleapis.com/css2?family=Lato&family=Pacifico&display=swap');
+  
+    // Required Core Stylesheet
+  @import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+
+  // Optional Theme Stylesheet
+  @import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
+
+
+  body {
+    margin: 0;
+  }
+
+  #app {
+    font-family: 'Lato', sans-serif;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    .container {
+      padding: 0 48px;
+    }
+  }
 </style>
