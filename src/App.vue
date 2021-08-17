@@ -1,16 +1,19 @@
 <template>
   <div id="app">
     <Header promoBanner="Free Shipping on all orders"/>
+    <HeroSlider/>
   </div>
 </template>
 
 <script>
 import Header from './components/Header.vue'
+import HeroSlider from './components/Hero.vue'
 
 export default {
   name: 'App',
   components: {
-    Header
+    Header,
+    HeroSlider
   }
 }
 </script>
@@ -37,7 +40,7 @@ export default {
     padding: 0 20px;
   }
 
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 1025px) {
     .container {
       padding: 0 48px;
     }

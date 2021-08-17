@@ -88,7 +88,7 @@ export default {
         display: none;
     }
 
-    @media screen and (min-width: 1024px) {
+    @media screen and (min-width: 1025px) {
         .header-main__nav-toggle {
             display: none;
         }
