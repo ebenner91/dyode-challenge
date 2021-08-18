@@ -1,17 +1,22 @@
 <template>
   <a :href="linkUrl" class="link-card" :class="mobileWidth">
-    <picture v-if="mobileWidth !== undefined && mobileWidth === 'link-card--mobile-full'">
+    <picture
+      v-if="
+        mobileWidth !== undefined && mobileWidth === 'link-card--mobile-full'
+      "
+    >
       <source
         media="(min-width: 799px)"
         :srcset="require(`@/assets/${desktopImageUrl}`)"
       />
-      <source media="(min-width: 0px)" :srcset="require(`@/assets/${mobileImageUrl}`)" />
-      <img
-        :src="require(`@/assets/${mobileImageUrl}`)"
-        :alt="imageAlt"
+      <source
+        media="(min-width: 0px)"
+        :srcset="require(`@/assets/${mobileImageUrl}`)"
       />
+      <img :src="require(`@/assets/${mobileImageUrl}`)" :alt="imageAlt" />
     </picture>
-    <img v-else
+    <img
+      v-else
       :src="require(`@/assets/${desktopImageUrl}`)"
       :alt="imageAlt"
       class="link-card__image"
@@ -34,8 +39,8 @@ export default {
 
 <style lang="scss" scoped>
 .link-card {
-    position: relative;
-    margin-bottom: 10px;
+  position: relative;
+  margin-bottom: 10px;
 
   img {
     max-width: 100%;
@@ -43,14 +48,15 @@ export default {
   }
 
   .link-card__text {
-      position: absolute;
-      bottom: 0;
-      background-color: #10504F;
-      color: #fff;
-      font-family: 'Pacifico', cursive;
-      width: 100%;
-      text-align: center;
-      margin: 0;
+    position: absolute;
+    bottom: 0;
+    background-color: #10504f;
+    color: #fff;
+    font-family: "Pacifico", cursive;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    font-size: 20px;
   }
 }
 
@@ -65,6 +71,11 @@ export default {
 @media screen and (min-width: 1025px) {
   .link-card {
     flex-basis: 32%;
+
+    .link-card__text {
+      font-size: 40px;
+      padding: 20px;
+    }
   }
 }
 </style>
