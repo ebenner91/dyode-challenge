@@ -1,6 +1,6 @@
 <template>
   <a :href="linkUrl" class="link-card" :class="mobileWidth">
-    <picture v-if="mobileWidth === 'link-card--mobile-full'">
+    <picture v-if="mobileWidth !== undefined && mobileWidth === 'link-card--mobile-full'">
       <source
         media="(min-width: 799px)"
         :srcset="require(`@/assets/${desktopImageUrl}`)"
