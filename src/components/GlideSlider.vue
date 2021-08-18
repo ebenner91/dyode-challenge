@@ -21,7 +21,8 @@ export default {
       this.glide = new Glide(this.$refs.glide,{
         swipeThreshold: 30,
         dragThreshold: 30,
-        gap:0
+        gap:0,
+        type: 'carousel'
       });
 
       this.glide.mount({ Swipe, Controls });
@@ -44,6 +45,9 @@ export default {
 <style lang='scss'>
 @import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
 
+// Optional Theme Stylesheet
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
+
 .glide__bullets {
   align-items: center;
   display: flex;
@@ -51,10 +55,15 @@ export default {
   justify-content: center;
   text-align: center;
   width:100%;
+  position: absolute;
+  bottom: 208px;
+
+  @media screen and (min-width: 1025px) {
+    bottom: 20px;
+  }
 }
 
 .glide__bullet {
-  border: 2px solid #202020;
   border-radius: 50%;
   height: 8px;
   margin: 2px;
@@ -67,7 +76,7 @@ export default {
   }
 
   &.glide__bullet--active {
-    background: #202020;
+    background: #fff;
   }
 }
 
