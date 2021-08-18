@@ -52,6 +52,7 @@
         <p class="product-slider__price">$19.99</p>
       </glide-slide>
     </product-slider>
+    <static-hero/>
   </div>
 </template>
 
@@ -62,6 +63,7 @@ import LinkCards from './components/LinkCards.vue'
 import LinkCard from './components/LinkCard.vue'
 import ProductSlider from './components/ProductSlider.vue'
 import GlideSlide from './components/GlideSlide.vue'
+import StaticHero from './components/StaticHero.vue'
 
 export default {
   name: 'App',
@@ -71,7 +73,8 @@ export default {
     LinkCards,
     LinkCard,
     ProductSlider,
-    GlideSlide
+    GlideSlide,
+    StaticHero
   }
 }
 </script>
