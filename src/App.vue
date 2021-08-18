@@ -53,6 +53,15 @@
       </glide-slide>
     </product-slider>
     <static-hero/>
+    <square-image-slider title="Follow us on Instagram">
+      <glide-slide><img src="./assets/social-1.jpg" alt="Instagram Photo"></glide-slide>
+      <glide-slide><img src="./assets/social-2.jpg" alt="Instagram Photo"></glide-slide>
+      <glide-slide><img src="./assets/social-3.jpg" alt="Instagram Photo"></glide-slide>
+      <glide-slide><img src="./assets/social-4.jpg" alt="Instagram Photo"></glide-slide>
+      <glide-slide><img src="./assets/social-5.jpg" alt="Instagram Photo"></glide-slide>
+    </square-image-slider>
+    <newsletter-footer headerText="Sign up &amp; Stay Connected"><p>Sign up for the newsletter and get 20% off! Gain access to exclusive offers and be the first to know when new stuff drops!</p></newsletter-footer>
+    <Footer/>
   </div>
 </template>
 
@@ -64,6 +73,9 @@ import LinkCard from './components/LinkCard.vue'
 import ProductSlider from './components/ProductSlider.vue'
 import GlideSlide from './components/GlideSlide.vue'
 import StaticHero from './components/StaticHero.vue'
+import SquareImageSlider from './components/SquareImageSlider.vue'
+import NewsletterFooter from './components/NewsletterFooter.vue'
+import Footer from './components/Footer.vue'
 
 export default {
   name: 'App',
@@ -74,7 +86,10 @@ export default {
     LinkCard,
     ProductSlider,
     GlideSlide,
-    StaticHero
+    StaticHero,
+    SquareImageSlider,
+    NewsletterFooter,
+    Footer
   }
 }
 </script>
