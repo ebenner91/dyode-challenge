@@ -26,6 +26,32 @@
       Accessories
       </link-card>
     </link-cards>
+    <product-slider>
+      <glide-slide>
+        <img src="./assets/product-image.jpg">
+        <p class="product-slider__title">Product Title</p>
+        <p class="product-slider__category">Women's T-Shirt</p>
+        <p class="product-slider__price">$19.99</p>
+      </glide-slide>
+      <glide-slide>
+        <img src="./assets/product-image.jpg">
+        <p class="product-slider__title">Product Title</p>
+        <p class="product-slider__category">Women's T-Shirt</p>
+        <p class="product-slider__price">$19.99</p>
+      </glide-slide>
+      <glide-slide>
+        <img src="./assets/product-image.jpg">
+        <p class="product-slider__title">Product Title</p>
+        <p class="product-slider__category">Women's T-Shirt</p>
+        <p class="product-slider__price">$19.99</p>
+      </glide-slide>
+      <glide-slide>
+        <img src="./assets/product-image.jpg">
+        <p class="product-slider__title">Product Title</p>
+        <p class="product-slider__category">Women's T-Shirt</p>
+        <p class="product-slider__price">$19.99</p>
+      </glide-slide>
+    </product-slider>
   </div>
 </template>
 
@@ -34,6 +60,8 @@ import Header from './components/Header.vue'
 import HeroSlider from './components/Hero.vue'
 import LinkCards from './components/LinkCards.vue'
 import LinkCard from './components/LinkCard.vue'
+import ProductSlider from './components/ProductSlider.vue'
+import GlideSlide from './components/GlideSlide.vue'
 
 export default {
   name: 'App',
@@ -41,7 +69,9 @@ export default {
     Header,
     HeroSlider,
     LinkCards,
-    LinkCard
+    LinkCard,
+    ProductSlider,
+    GlideSlide
   }
 }
 </script>
@@ -52,11 +82,14 @@ export default {
     // Required Core Stylesheet
   @import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
 
-  // Optional Theme Stylesheet
-  @import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
+
 
   * {
     box-sizing: border-box;
+  }
+
+  img {
+    max-width: 100%;
   }
 
   body {
