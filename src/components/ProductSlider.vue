@@ -1,19 +1,22 @@
 <template>
-  <div class="glide" ref="glide">
-    <div class="glide__arrows" data-glide-el="controls">
-      <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
-        <img src="../assets/left-arrow.svg" alt="Left Arrow" />
-      </button>
-    </div>
-    <div class="glide__track" data-glide-el="track">
-      <div class="glide__slides">
-        <slot></slot>
+  <div class="product-slider">
+    <h2 class="product-slider__header">New Arrivals</h2>
+    <div class="glide" ref="glide">
+      <div class="glide__arrows" data-glide-el="controls">
+        <button class="glide__arrow glide__arrow--left" data-glide-dir="<">
+          <img src="../assets/left-arrow.svg" alt="Left Arrow" />
+        </button>
       </div>
-    </div>
-    <div class="glide__arrows" data-glide-el="controls">
-      <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
-        <img src="../assets/right-arrow.svg" alt="Right Arrow" />
-      </button>
+      <div class="glide__track" data-glide-el="track">
+        <div class="glide__slides">
+          <slot></slot>
+        </div>
+      </div>
+      <div class="glide__arrows" data-glide-el="controls">
+        <button class="glide__arrow glide__arrow--right" data-glide-dir=">">
+          <img src="../assets/right-arrow.svg" alt="Right Arrow" />
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -37,7 +40,7 @@ export default {
         breakpoints: {
           1024: {
             perView: 2,
-            gap: 10
+            gap: 10,
           },
         },
       });
@@ -53,6 +56,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.product-slider__header {
+  text-align: center;
+  font-family: 'Pacifico', cursive;
+  font-size: 26px;
+  font-weight: 400;
+}
 .glide {
   display: flex;
   align-items: center;
@@ -74,5 +84,11 @@ export default {
   border: none;
   box-shadow: none;
   background: none;
+}
+
+@media screen and (min-width: 1025px) {
+  .product-slider__header {
+    font-size: 60px;
+  }
 }
 </style>
