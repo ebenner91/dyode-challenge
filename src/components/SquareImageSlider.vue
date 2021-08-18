@@ -1,21 +1,21 @@
 <template>
-<div class="square-image-slider">
-<h2 class="square-image-slider__title">{{ title }}</h2>
+  <div class="square-image-slider">
+    <h2 class="square-image-slider__title">{{ title }}</h2>
     <div class="glide" ref="glide">
-    <div class="glide__track" data-glide-el="track">
-      <div class="glide__slides">
-        <slot></slot>
+      <div class="glide__track" data-glide-el="track">
+        <div class="glide__slides">
+          <slot></slot>
+        </div>
       </div>
     </div>
   </div>
-</div>
 </template>
 
 <script>
 import Glide, {
   Swipe,
   Breakpoints,
-  Autoplay
+  Autoplay,
 } from "@glidejs/glide/dist/glide.modular.esm";
 
 export default {
@@ -27,13 +27,13 @@ export default {
         gap: 20,
         type: "carousel",
         perView: 5,
-        focusAt: 'center',
+        focusAt: "center",
         autoplay: 2500,
         hoverpause: true,
         breakpoints: {
           1024: {
             perView: 3,
-            gap: 10
+            gap: 10,
           },
         },
       });
@@ -46,7 +46,23 @@ export default {
     });
   },
   props: {
-      title: String
-  }
+    title: String,
+  },
 };
 </script>
+
+<style scoped>
+.square-image-slider__title {
+  text-align: center;
+  font-weight: 400;
+  font-size: 26px;
+  font-family: "Pacifico", cursive;
+}
+
+@media screen and (min-width: 1025px) {
+  .square-image-slider__title {
+    font-size: 60px;
+    margin-bottom: 35px;
+  }
+}
+</style>
