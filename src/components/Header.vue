@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="promoBanner">{{ promoBanner }}</div>
-    <div class="header-main container">
+    <div class="header-main container" @mouseleave="navActive = false">
       <div class="header-main__left-content">
         <span class="header-main__nav-toggle" @click="navActive = true">
           <img src="../assets/hamburger.svg" />
@@ -29,7 +29,7 @@
           ><img src="../assets/shopping-cart.png" alt="Shopping Cart Icon"
         /></a>
       </div>
-      <div class="header-main__nav-popup" @mouseleave="navActive = false" v-bind:class="{ active: navActive }">
+      <div class="header-main__nav-popup" v-bind:class="{ active: navActive }">
         <div class="nav-popup__top-bar">
           <img
             src="../assets/iconmonstr-x-mark-circle-thin.svg"
