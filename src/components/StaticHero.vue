@@ -21,7 +21,7 @@
   padding: 1px;
   height: 60vw;
   background-image: url("../assets/static-hero-image.jpg");
-  background-position: left;
+  background-position: right;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -55,7 +55,7 @@
 
 @media screen and (min-width: 1025px) {
   .static-hero__hero-content {
-    height: 100vh;
+    height: 45vw;
   }
 
   .static-hero__text-overlay {

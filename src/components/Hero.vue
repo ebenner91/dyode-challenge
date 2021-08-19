@@ -109,7 +109,7 @@ export default {
 
 @media screen and (min-width: 1025px) {
   .hero-slider__slide-content {
-    height: 80vh;
+    height: 45vw;
   }
 
   .hero-slider__text-overlay {
