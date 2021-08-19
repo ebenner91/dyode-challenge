@@ -12,14 +12,18 @@
       </div>
       <nav class="header-main__nav">
         <ul class="header-main__nav-list">
-          <li class="header-main__nav-link" @mouseenter="navActive = true"><a href="#">Men's</a></li>
+          <li class="header-main__nav-link" @mouseenter="navActive = true">
+            <a href="#">Men's</a>
+          </li>
           <li class="header-main__nav-link"><a href="#">Women's</a></li>
           <li class="header-main__nav-link"><a href="#">Accessories</a></li>
           <li class="header-main__nav-link"><a href="#">Sale!</a></li>
         </ul>
       </nav>
       <div class="header-main__right-content">
-        <span class="header-main__search-toggle"
+        <span
+          @click="searchActive = !searchActive"
+          class="header-main__search-toggle"
           ><img src="../assets/search.png" alt="Search Icon"
         /></span>
         <a href="#" class="header-main__account-link"
@@ -80,6 +84,21 @@
             <li class="nav-popup__featured-link"><a href="#">Sale</a></li>
           </ul>
         </div>
+      </div>
+      <div
+        class="header-main__search-bar"
+        v-bind:class="{ active: searchActive }"
+      >
+        <input
+          type="text"
+          class="header-main__search-input"
+          placeholder="What are you searching for?"
+        /><button
+          @click="searchActive = false"
+          class="header-main__search-submit"
+        >
+          Go
+        </button>
       </div>
     </div>
   </header>
@@ -255,6 +274,47 @@ export default {
   }
 }
 
+.header-main__search-bar {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 167px;
+  z-index: 10;
+  display: none;
+  background: #fff;
+  padding: 5px;
+  width: 86%;
+  max-width: 335px;
+
+  &.active {
+    display: flex;
+  }
+}
+
+.header-main__search-input {
+  width: 100%;
+  height: 35px;
+  border: thin solid #000;
+  padding-left: 10px;
+
+  &::placeholder {
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 2.8;
+  }
+}
+
+.header-main__search-submit {
+  width: 55px;
+  height: 35px;
+  border: none;
+  background: #000;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
 @media screen and (min-width: 1025px) {
   .header-main__nav-toggle {
     display: none;
@@ -335,6 +395,14 @@ export default {
   .nav-popup__featured-link {
     font-size: 22px;
     line-height: 1.8;
-} 
+  }
+
+  .header-main__search-bar {
+    width: 335px;
+    top: unset;
+    right: -45px;
+    left: unset;
+    background: none;
+  }
 }
 </style>
